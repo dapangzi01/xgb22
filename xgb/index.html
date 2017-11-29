@@ -1,0 +1,119 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <title>北京大学学生工作部人民武装部</title>
+        <script type="text/javascript" src="./statics/js/jquery.min.js"></script>
+    </head>
+    <body>
+        <style type="text/css">
+            @charset "UTF-8";
+            * {margin: 0;padding: 0;font-family: "Helvetica Neue", Helvetica, Arial;}
+            @media screen and (max-width: 400px) {
+                * {font-size: 16px;}
+            }
+            @media screen and (min-width: 400px) and (max-width: 768px) {
+                * {font-size: 18px;}
+            }
+            @media screen and (min-width: 768px) and (max-width: 1200px) {
+                * {font-size: 20px;}
+            }
+            @media screen and (min-width: 1200px) {
+                * {font-size: 24px;}
+            }
+            body {background-color: #f1f1f1;}
+        </style><style>
+    .head{display: block; overflow: hidden;}
+    .head img{display: block; width: 100%; margin: 0; padding: 0; height: auto;}
+    .content{display: block; overflow: hidden; margin: 0 0 3em 0; padding: 1em 0.7em 0.5em; text-align: center}
+    .content .ui-btn-box{display: block; float: left; margin: 0; margin-bottom: 0.5em; padding: 0;}
+    .content .ui-btn-box:nth-child(4n), .content .ui-btn-box:nth-child(4n+1){width: 50%;}
+    .content .ui-btn-box:nth-child(4n+2), .content .ui-btn-box:nth-child(4n+3){width: 50%;}
+    .content .ui-btn-box:nth-child() .cell{margin-left: 0.5em;}
+    .content .ui-btn-box .cell{display: block; font-size: 1.2em; color: #fff; padding: 0; font-weight: 300;
+                               text-shadow: 0 0 1px #fceac1; text-align: center; white-space: nowrap; overflow: hidden;
+                               background-image: linear-gradient(top right, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+                               background-image: -webkit-linear-gradient(top right, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+                               background-image: -moz-linear-gradient(top right, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+                               background-image: -o-linear-gradient(top right, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    }
+    .cell.bg1{background: #f4ad09;}
+    .cell.bg2{background: #92d700;}
+    .cell.bg3{background: #0068a5;}
+    .cell.bg4{background: #9545fe;}
+    .cell.bg5{background: #e64442;}
+    .cell.bg6{background: #2bbffb;}
+    .cell.bg7{background: #f98e00;}
+    .footer{position: fixed; bottom: 0; display: block; width: 100%; clear: both; height: 3em;
+            border-top: 1px solid #d1d1d1; box-shadow: 0 -3px 3px rgba(0,0,0,0.15); background: #f1f1f1; z-index: 1000;}
+    .footer a.f-l-btn{position: absolute; top: 0.75em; left: 1em; display: inline-block; overflow: hidden;}
+    .footer a.f-l-btn img{width: 0.84em; height: 1.5em;}
+    .footer a.f-r-btn{display: block; margin: 0.2em auto; text-align: center; overflow: hidden; width: 3em;}
+    .footer a.f-r-btn img{display: block; height: 2.6em; margin: 0 auto;}
+</style>
+<div class="head">
+    <img src="./statics/images/hh.jpg" alt="北大" />
+</div>
+<div class="content">
+    <div class="ui-btn-box" onclick="window.location.href = 'newsList.html'">
+        <div class="cell bg1">学工动态</div>
+    </div>
+    <div class="ui-btn-box" onclick="window.location.href = 'manage_student.html'">
+        <div class="cell bg2">学生管理</div>
+    </div>
+    <div class="ui-btn-box" onclick="window.location.href = ''">
+        <div class="cell bg3">队伍建设</div>
+    </div>
+    <div class="ui-btn-box" onclick="window.location.href = ''">
+        <div class="cell bg4">热点专题</div>
+    </div>
+    <div class="ui-btn-box" onclick="window.location.href = ''">
+        <div class="cell bg5">国防工作</div>
+    </div>
+    <div class="ui-btn-box" onclick="window.location.href = ''">
+        <div class="cell bg6">政策规章</div>
+    </div>
+</div>
+<div class="footer">
+    <a class="f-l-btn" href="index.html"><img src="./statics/images/f-arrow.png" /></a>
+    <a class="f-r-btn" href="index.html"><img src="./statics/images/f-h.jpg"/></a>
+</div>
+
+<script>
+    $(function(){
+        var winWidth, winHeight;
+    // 获取窗口宽度
+    if (window.innerWidth) {
+        winWidth = window.innerWidth;
+    }
+    else if ((document.body) && (document.body.clientWidth)) {
+        winWidth = document.body.clientWidth;
+    }
+    // 获取窗口高度
+    if (window.innerHeight) {
+        winHeight = window.innerHeight;
+    }
+    else if ((document.body) && (document.body.clientHeight)) {
+        winHeight = document.body.clientHeight;
+    } else
+    // 通过深入 Document 内部对 body 进行检测，获取窗口大小
+    if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+        winHeight = document.documentElement.clientHeight;
+        winWidth = document.documentElement.clientWidth;
+    }
+
+    var hImgHeight = winWidth * 330 / 720;
+    var boxCell = document.getElementsByClassName("cell");
+    var boxCellLenght = boxCell.length;
+//    var boxCellRow = Math.ceil(parseInt(boxCellLenght) / 2);
+//    var spaceInterval = (9 + boxCellRow) * 9;
+    var cCellHeight = (winHeight - hImgHeight - 110) / 3;
+    for (var i = 0; i < boxCellLenght; i++) {
+        boxCell[i].setAttribute("style", "line-height:" + cCellHeight + "px;");
+    }
+    });
+</script>
+    </body>
+</html>
